@@ -8,7 +8,7 @@
 
 Provide your solution to the first part of everyday in the `day-X/a.ts` file (where `X` is the day number!):
 
-`ts
+```ts
 import { runSolution } from '../utils.ts';
 
 /** provide your solution as the return of this function */
@@ -18,7 +18,7 @@ export async function day1a(data: string[]) {
 }
 
 await runSolution(day1a);
-`
+```
 
 Copy and paste your unique actual data set into the `day-X/a.data.txt` file. To run your solution against this data set, you can run:
 - `nx day-X-a`
