@@ -1,5 +1,6 @@
 # ts-aoc-starter
 
+[Advent of Code game](https://adventofcode.com/2024)
 ## Video On How To Use This Starter
 
 [Watch the video](https://www.youtube.com/watch?v=st6Yq-19bW8)
