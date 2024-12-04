@@ -64,8 +64,11 @@ function convertReportToDiffLists(report: number[]) {
 
 function hasValidDiffedReport(report: number[]) {
   const diffs = convertReportToDiffLists(report);
-  const allSameDirection = diffs.every((diff) => diff > 0) || diffs.every((diff) => diff < 0);
-  const allInBounds = diffs.every((diff) => Math.abs(diff) > 0 && Math.abs(diff) <= 3)
+  const allSameDirection =
+    diffs.every((diff) => diff > 0) || diffs.every((diff) => diff < 0);
+  const allInBounds = diffs.every(
+    (diff) => Math.abs(diff) > 0 && Math.abs(diff) <= 3
+  );
 
   return allSameDirection && allInBounds;
 }
@@ -75,7 +78,7 @@ function hasValidDiffedReport(report: number[]) {
  * It would be more efficient to find the first item that fails, and
  * check from there, but this algorithm handles each report as a whole
  * instead of stepping through each item.
- */ 
+ */
 function isValidReportWithSingleItemRemoved(report: number[]) {
   for (let i = 0; i < report.length; i++) {
     const reportWithIRemoved = [...report.slice(0, i), ...report.slice(i + 1)];
