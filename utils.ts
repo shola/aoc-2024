@@ -33,6 +33,10 @@ function getCLITokens(): [number, ExerciseVariant, string?] {
 export async function readData(): Promise<string[]> {
   const fileName = createInputFileName(...getCLITokens());
   const data = (await readFile(fileName)).toString().split('\n');
+
+  // special case where the last line is an empty string
+  if (data.at(-1) === '') data.pop();
+  
   return data;
 }
 

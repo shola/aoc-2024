@@ -2,11 +2,11 @@ export function getLocationLists(data: string[]) {
   const leftLocations = [];
   const rightLocations = [];
 
-  data.map((row) => {
+  data.forEach((row) => {
     const [l, r] = row.split(/\s+/).map((item) => parseInt(item));
 
-    if (typeof l === 'number' && !isNaN(l)) leftLocations.push(l);
-    if (typeof r === 'number' && !isNaN(r)) rightLocations.push(r);
+    leftLocations.push(l);
+    rightLocations.push(r);
   });
 
   return [leftLocations, rightLocations];
