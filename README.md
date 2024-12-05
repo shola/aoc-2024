@@ -44,3 +44,6 @@ Usually part B builds on the solution for part A. Obviously, if it makes sense, 
 
 Every command above supports a `watch-` version of the command as well. For example, if you'd like to run your command: `nx day-1-a-sample` and have it re-run whenever a file is saved, you can run the command: `nx watch-day-1-a-sample`.
 
+## Troubleshooting
+
+If you get an `intersection is not a function` error, make sure you are using node v22 or greater
