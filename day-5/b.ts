@@ -107,7 +107,8 @@ function fixInvalidUpdate(
       // Move the currNum to the back, and slide rest to the left
       // Side-effects should normally be avoided, but works fine in this case because 
       // everything "before" the current item in the iteration is correct.
-      invalidUpdate = [...invalidUpdate.slice(0, i), ...rest, currNum];
+      const head = invalidUpdate.slice(0, i);
+      invalidUpdate = [...head, ...rest, currNum];
 
       // Since a different value has been slid into the current index, repeat this iteration
       i--;
