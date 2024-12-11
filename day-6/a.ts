@@ -6,7 +6,10 @@ interface Guard {
   col: number;
   marker: '^' | '>' | '<' | 'v';
 }
-type Cell = Guard['marker'] | '.' | '#' | 'X';
+type Obstacles = '#';
+type Open = '.';
+type Visited = 'X';
+type Cell = Guard['marker'] | Visited | Obstacles | Open;
 interface Game {
   grid: Cell[][];
   cellsVisited: number;
@@ -77,7 +80,7 @@ function moveGuard(gm: Game, gd: Guard) {
   }
 }
 
-function rotateGuard90Deg(gd: Guard): Guard['marker'] {
+function rotateGuard90Deg(gd: Guard) {
   switch (gd.marker) {
     case '^':
       gd.marker = '>';
